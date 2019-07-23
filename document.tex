@@ -1,0 +1,258 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = xelatex
+% !BIB program = biber
+
+% MIT License
+%
+% Copyright (c) 2019 Star Brilliant
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+%
+% The above copyright notice and this permission notice shall be included in
+% all copies or substantial portions of the Software.
+%
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+
+\documentclass[letterpaper]{wordfeel}
+
+\usepackage{biblatex}
+\usepackage{booktabs}
+\usepackage[pass]{geometry}
+\usepackage{metalogo}
+\usepackage{placeins}
+\usepackage{url}
+
+\setlogokern{La}{-0.21em}
+\setlogokern{aT}{-0.05em}
+\setlogokern{eL}{-0.1em}
+
+\title{\LaTeX-WordFeel template}
+\author{Star Brilliant}
+
+\begin{document}
+\pagenumbering{roman}
+
+\begin{titlepage}
+
+\maketitle
+
+{\Large\textit{A \LaTeX{} template that mimics Microsoft Word's look and feel.}}
+
+\tableofcontents
+
+\end{titlepage}
+
+\clearpage
+\pagenumbering{arabic}
+\section{Introduction}
+
+\LaTeX-WordFeel is a \LaTeX{} imitation of Microsoft Word 2019's default template ``\texttt{Normal.dotm}''.
+
+\section{Compatibility}
+
+This template is designed solely for \XeLaTeX{} due to its ability to use TrueType/OpenType fonts directly and its excellent Unicode support. Please be aware that pdf\LaTeX{} is not supported.
+
+\section{Style definition}
+
+\subsection{Page}
+
+\FloatBarrier
+
+\LaTeX-WordFeel uses the default paper size of \texttt{article} class in your \LaTeX{} distribution, which may be either A4 paper or Letter paper. To specify a paper size explicitly, pass \texttt{[a4paper]} or \texttt{[letterpaper]} to \texttt{\textbackslash{}documentclass\{wordfeel\}}.
+
+Page margin is set as in \autoref{tab:page-margin}. If you want to change page margin, you can use the ``\href{https://ctan.org/pkg/geometry}{\texttt{geometry}}'' package. Please refer to \url{http://mirrors.ctan.org/macros/latex/contrib/geometry/geometry.pdf} for the manual.
+
+\begin{table}[htb]
+    \centering
+    \caption{Page margin definitions}
+    \label{tab:page-margin}
+    \begin{tabular}{lr}
+        \toprule
+        \multicolumn{1}{c}{Dimension} & \multicolumn{1}{c}{Value} \\
+        \midrule
+        Gutter & 0 inch \\
+        Top margin & 1 inch \\
+        Left margin & 1 inch \\
+        Right margin & 1 inch \\
+        Bottom margin & 1 inch \\
+        Header from top & 0.5 inch \\
+        Footer from bottom & 0.5 inch \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsection{Paragraph}
+
+\subsubsection{Line spacing}
+
+\LaTeX-WordFeel uses multiple line spacing at 1.08×, which is the default in the United States version of Microsoft Word. To disable multi line spacing, use ``\texttt{\textbackslash{}linespread\{1\}}'' in your document preamble.
+
+\subsubsection{Margin and indentation}
+
+\LaTeX-WordFeel adds 8 bp of margin after each paragram, which is the default in the United States version of Microsoft Word. To disable paragraph margin, use ``\texttt{\textbackslash{}setlength\{\textbackslash{}parskip\}\{0pt\}}'' in your document preamble.
+
+\LaTeX-WordFeel comes with no paragraph indentation by default. To enable paragraph indentation, use ``\texttt{\textbackslash{}setlength\{\textbackslash{}parindent\}\{0.5in\}}'' in your document preamble.
+
+\subsubsection{Justification}
+
+\LaTeX-WordFeel uses justification with automatic hyphenation, although Microsoft Word does not enable automatic hyphenation by default. If you want to align to left instead, use ``\texttt{\textbackslash{}raggedright}'' in your document preamble. You can also use the package ``\href{https://ctan.org/pkg/ragged2e}{\texttt{ragged2e}}'' to enable advanced justification control.
+
+\subsection{Fonts}
+
+\subsubsection{Font families}
+
+\FloatBarrier
+
+\LaTeX-WordFeel uses the same font families as in Microsoft Word, listed in \autoref{tab:font-families}. Please note that you need to own a legal copy of these fonts to use this template.
+
+\begin{table}[htb]
+    \centering
+    \caption{Font families}
+    \label{tab:font-families}
+    \begin{tabular}{ll}
+        \toprule
+        \multicolumn{1}{c}{Letter form} & \multicolumn{1}{c}{Font family} \\
+        \midrule
+        \textsf{Sans-serif (Default)} & \textsf{Calibri} \\
+        Serif & \textrm{Cambria} \\
+        \texttt{Monospace} & \texttt{Consolas} (scaled by 94.72\% to match ex-height) \\
+        \textrm{\textit{Math}} & \textrm{\textit{Cambria Math}} \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsubsection{Font sizes}
+
+The default font size is 11 bp. You may pass either \texttt{[10pt]}, \texttt{[11pt]}, or \texttt{[12pt]} to \texttt{\textbackslash{}documentclass\{word\\feel\}} to select 10 bp, 11 bp, or 12 bp as the default font size.
+
+In \LaTeX, 1 inch = 72 bp = 72.27 pt, while in Microsoft Word, 1 inch = 72 pt. Therefore you will need to use ``bp'' if you want your document to look similar to Microsoft Word's output.
+
+\FloatBarrier
+
+The \LaTeX{} font size macros are adjusted according to default font size, shown in \autoref{tab:font-sizes}.
+
+\begin{table}[htb]
+    \centering
+    \caption{Font sizes}
+    \label{tab:font-sizes}
+    \begin{tabular}{lccc}
+        \toprule
+        \multicolumn{1}{c}{Macro name} & \texttt{[10pt]} & \texttt{[11pt]} & \texttt{[12pt]} \\
+        \midrule
+        \texttt{\textbackslash{}tiny} & \fontsize{5bp}{6.103515625bp}\selectfont 5 bp & \tiny 6.5 bp & \tiny 6.5 bp \\
+        \texttt{\textbackslash{}scriptsize} & \tiny 6.5 bp & \scriptsize 8 bp & \scriptsize 8 bp \\
+        \texttt{\textbackslash{}footnotesize} & \scriptsize 8 bp & \footnotesize 9 bp & \small 10 bp \\
+        \texttt{\textbackslash{}small} & \footnotesize 9 bp & \small 10 bp & \normalsize 11 bp \\
+        \texttt{\textbackslash{}normalsize} & \small 10 bp & \normalsize 11 bp & \large 12 bp \\
+        \texttt{\textbackslash{}large} & \large 12 bp & \large 12 bp & \Large 14 bp \\
+        \texttt{\textbackslash{}Large} & \Large 14 bp & \Large 14 bp & \LARGE 18 bp \\
+        \texttt{\textbackslash{}LARGE} & \LARGE 18 bp & \LARGE 18 bp & \huge 20 bp \\
+        \texttt{\textbackslash{}huge} & \huge 20 bp & \huge 20 bp & \Huge 24 bp \\
+        \texttt{\textbackslash{}Huge} & \Huge 24 bp & \Huge 24 bp & \fontsize{26bp}{31.73828125bp}\selectfont 26 bp \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\FloatBarrier
+
+Font metrics are set according to Calibri font, shown in \autoref{tab:font-metrics}. Thse parameters controls line spacing and will not change even if you temporarily switch to another font family.
+
+\begin{table}[htb]
+    \centering
+    \caption{Calibri font metrics}
+    \label{tab:font-metrics}
+    \begin{tabular}{lr}
+        \toprule
+        \multicolumn{1}{c}{Metric} & \multicolumn{1}{c}{Value}\\
+        \midrule
+        Line height & 2500 \\
+        Ascent & 1950 \\
+        Descent & 550 \\
+        EM-size & 2048 \\
+        Ex-size & 951 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\FloatBarrier
+
+\subsubsection{Ligatures}
+
+OpenType ligatures are enabled in \LaTeX-WordFeel, although it is not enabled by Microsoft Word by default.
+
+Calibri supports the following ``Common''-category ligatures:
+
+{\LARGE fb, ffb, fh, ffh, fi, ffi, fj, ffj, fk, ffk, fl, ffl, ft, fft, ft, tf, ti, tt, ttf, tti.}
+
+\textrm{Cambria} supports the following ``Common''-category ligatures:
+
+{\LARGE\rmfamily fb, ffb, fh, ffh, fi, ffi, fk, ffk, fl, ffl.}
+
+\section{Math mode}
+
+\LaTeX-WordFeel imports the \texttt{amsmath} package automatically. Also, \LaTeX{} math mode is able to use \textrm{Cambria Math} as the default math font.
+
+Here are a few example equations typesetted with \LaTeX{} math mode:
+
+\begin{align}
+    A&=\pi r^2 \\
+    \left(x+a\right)^n&=\sum_{k=0}^{n}{\binom{n}{k}x^ka^{n-k}} \\
+    \left(1+x\right)^n&=1+\frac{nx}{1!}+\frac{n\left(n-1\right)x^2}{2!}+\ldots \\
+    f\left(x\right)&=a_0+\sum_{n=1}^{\infty}\left(a_n\cos{\frac{n\pi x}{L}}+b_n\sin{\frac{n\pi x}{L}}\right) \\
+    a^2&+b^2=c^2 \\
+    x&=\frac{-b\pm\sqrt{b^2-4ac}}{2a} \\
+    e^x&=1+\frac{x}{1!}+\frac{x^2}{2!}+\frac{x^3}{3!}+\ldots, \hspace{2em}-\infty<x<\infty \\
+    \sin{\alpha}\pm\sin{\beta}&=2\sin{\frac{1}{2}\left(\alpha\pm\beta\right)}\cos{\frac{1}{2}\left(\alpha\mp\beta\right)} \\
+    \cos{\alpha}+\cos{\beta}&=2\cos{\frac{1}{2}\left(\alpha+\beta\right)}\cos{\frac{1}{2}\left(\alpha-\beta\right)}
+\end{align}
+
+\section{Dummy text demo}
+
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce posuere, magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+
+Nunc viverra imperdiet enim. Fusce est. Vivamus a tellus.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.
+
+Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.
+
+Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy.
+
+Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla.
+
+Donec blandit feugiat ligula. Donec hendrerit, felis et imperdiet euismod, purus ipsum pretium metus, in lacinia nulla nisl eget sapien. Donec ut est in lectus consequat consequat.
+
+Etiam eget dui. Aliquam erat volutpat. Sed at lorem in nunc porta tristique.
+
+Proin nec augue. Quisque aliquam tempor magna. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+Nunc ac magna. Maecenas odio dolor, vulputate vel, auctor ac, accumsan id, felis. Pellentesque cursus sagittis felis.
+
+\section{License}
+
+This template is released under MIT license. For more information, please refer to \url{https://github.com/m13253/LaTeX-WordFeel}.
+
+Copyright © 2019 Star Brilliant
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the ``Software''), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED ``AS IS'', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+\end{document}
