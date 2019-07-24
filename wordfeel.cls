@@ -122,14 +122,16 @@
 
 \renewcommand{\maketitle}{{\par\wordfeel@titlefamily\fontsize{28bp}{34.1796875bp}\selectfont{\@title}\par\vspace{-\parskip}\vspace{4.5654296875bp}\wordfeel@subtitlefamily\fontsize{11bp}{13.427734375bp}\selectfont\color[gray]{0.3515625}{\@author}\\{\@date}\par}}
 
-\titleformat{\section}{\vspace{-1.3427734375bp}\vspace{\topskip}\vspace*{-\topskip}\ifdim\parskip>12bp\vspace{-12bp}\else\vspace{-\parskip}\fi\wordfeel@titlefamily\fontsize{16bp}{19.53125bp}\selectfont\color[RGB]{47,84,150}}{\makebox[17.9828125bp][l]{\thesection}}{3.6171875bp}{}[\vspace{-\parskip}\vspace{1.3427734375bp}]
+\newlength{\wordfeel@flexboxlen}
+\titleformat{\section}{\vspace{-1.3427734375bp}\vspace{\topskip}\vspace*{-\topskip}\ifdim\parskip>12bp\vspace{-12bp}\else\vspace{-\parskip}\fi\wordfeel@titlefamily\fontsize{16bp}{19.53125bp}\selectfont\color[RGB]{47,84,150}}{\settowidth\wordfeel@flexboxlen{{\thesection}\ }\ifdim\wordfeel@flexboxlen<0.3in\makebox[0.3in][l]{{\thesection}}\else{\thesection}\ \fi}{0pt}{}[\vspace{-\parskip}\vspace{1.3427734375bp}]
 \titlespacing{\section}{0pt}{12bp}{0pt}
-\titleformat{\subsection}{\vspace{-0.537109375bp}\vspace{\topskip}\vspace*{-\topskip}\ifdim\parskip>2bp\vspace{-2bp}\else\vspace{-\parskip}\fi\wordfeel@titlefamily\fontsize{13bp}{15.869140625bp}\selectfont\color[RGB]{47,84,150}}{\makebox[25.86103515625bp][l]{\thesubsection}}{2.93896484375bp}{}[\vspace{-\parskip}\vspace{0.537109375bp}]
+\titleformat{\subsection}{\vspace{-0.537109375bp}\vspace{\topskip}\vspace*{-\topskip}\ifdim\parskip>2bp\vspace{-2bp}\else\vspace{-\parskip}\fi\wordfeel@titlefamily\fontsize{13bp}{15.869140625bp}\selectfont\color[RGB]{47,84,150}}{\settowidth\wordfeel@flexboxlen{{\thesubsection}\ }\ifdim\wordfeel@flexboxlen<0.4in\makebox[0.4in][l]{{\thesubsection}}\else{\thesubsection}\ \fi}{0pt}{}[\vspace{-\parskip}\vspace{0.537109375bp}]
 \titlespacing{\subsection}{0pt}{2bp}{0pt}
-\titleformat{\subsubsection}{\vspace{-0.2685546875bp}\vspace{\topskip}\vspace*{-\topskip}\ifdim\parskip>2bp\vspace{-2bp}\else\vspace{-\parskip}\fi\wordfeel@titlefamily\fontsize{12bp}{14.6484375bp}\selectfont\color[RGB]{31,55,99}}{\makebox[33.287109375bp][l]{\thesubsubsection}}{2.712890625bp}{}[\vspace{-\parskip}\vspace{0.2685546875bp}]
+\titleformat{\subsubsection}{\vspace{-0.2685546875bp}\vspace{\topskip}\vspace*{-\topskip}\ifdim\parskip>2bp\vspace{-2bp}\else\vspace{-\parskip}\fi\wordfeel@titlefamily\fontsize{12bp}{14.6484375bp}\selectfont\color[RGB]{31,55,99}}{\settowidth\wordfeel@flexboxlen{{\thesubsubsection}\ }\ifdim\wordfeel@flexboxlen<0.5in\makebox[0.5in][l]{{\thesubsubsection}}\else{\thesubsubsection}\ \fi}{0pt}{}[\vspace{-\parskip}\vspace{0.2685546875bp}]
 \titlespacing{\subsubsection}{0pt}{2bp}{0pt}
 
+\newlength{\wordfeel@dotwidth}
 \contentsmargin{0bp}
-\titlecontents{section}[0em]{}{\makebox[1.77392578125em][l]{\thecontentslabel}\hspace{0.22607421875em}}{\hspace{2em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
-\titlecontents{subsection}[1em]{}{\makebox[2.77392578125em][l]{\thecontentslabel}\hspace{0.22607421875em}}{\hspace{3em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
-\titlecontents{subsubsection}[2em]{}{\makebox[3.77392578125em][l]{\thecontentslabel}\hspace{0.22607421875em}}{\hspace{4em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
+\titlecontents{section}[0em]{}{\settowidth\wordfeel@flexboxlen{{\thecontentslabel}\ }\ifdim\wordfeel@flexboxlen<2em\makebox[2em][l]{{\thecontentslabel}}\else{\thecontentslabel}\ \fi}{\hspace{2em}}{\settowidth\wordfeel@dotwidth{.}\titlerule*[\wordfeel@dotwidth]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
+\titlecontents{subsection}[1em]{}{\settowidth\wordfeel@flexboxlen{{\thecontentslabel}\ }\ifdim\wordfeel@flexboxlen<3em\makebox[3em][l]{{\thecontentslabel}}\else{\thecontentslabel}\ \fi}{\hspace{3em}}{\settowidth\wordfeel@dotwidth{.}\titlerule*[\wordfeel@dotwidth]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
+\titlecontents{subsubsection}[2em]{}{\settowidth\wordfeel@flexboxlen{{\thecontentslabel}\ }\ifdim\wordfeel@flexboxlen<4em\makebox[4em][l]{{\thecontentslabel}}\else{\thecontentslabel}\ \fi}{\hspace{4em}}{\settowidth\wordfeel@dotwidth{.}\titlerule*[\wordfeel@dotwidth]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
