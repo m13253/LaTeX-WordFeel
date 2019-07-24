@@ -115,7 +115,7 @@
 \setsansfont{Calibri}[ItalicFont={* Italic},BoldFont={* Bold},BoldItalicFont={* Bold Italic}]
 \setmonofont{Consolas}[ItalicFont={* Italic},BoldFont={* Bold},BoldItalicFont={* Bold Italic},Scale=0.94721115537848606]
 \newfontfamily\wordfeel@titlefamily{Calibri}[UprightFont={* Light},ItalicFont={* Light Italic},BoldFont={*},BoldItalicFont={* Italic}]
-\newfontfamily\wordfeel@subtitlefamily{Calibri}[ItalicFont={* Italic},BoldFont={* Bold},BoldItalicFont={* Bold Italic},LetterSpace=6.81818,Ligatures={NoCommon}]
+\newfontfamily\wordfeel@subtitlefamily{Calibri}[ItalicFont={* Italic},BoldFont={* Bold},BoldItalicFont={* Bold Italic},LetterSpace=6.818181818181818,Ligatures={NoCommon}]
 \setmathfont{Cambria Math}
 \renewcommand{\familydefault}{\sfdefault}
 \wordfeel@resetsize
