@@ -130,6 +130,6 @@
 \titlespacing{\subsubsection}{0pt}{2bp}{0pt}
 
 \contentsmargin{0bp}
-\titlecontents{section}[0em]{}{\makebox[0pt][l]{\thecontentslabel}\hspace{2em}}{\hspace{2em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
-\titlecontents{subsection}[1em]{}{\makebox[0pt][l]{\thecontentslabel}\hspace{3em}}{\hspace{3em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
-\titlecontents{subsubsection}[2em]{}{\makebox[0pt][l]{\thecontentslabel}\hspace{4em}}{\hspace{4em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
+\titlecontents{section}[0em]{}{\makebox[1.77392578125em][l]{\thecontentslabel}\hspace{0.22607421875em}}{\hspace{2em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
+\titlecontents{subsection}[1em]{}{\makebox[2.77392578125em][l]{\thecontentslabel}\hspace{0.22607421875em}}{\hspace{3em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
+\titlecontents{subsubsection}[2em]{}{\makebox[3.77392578125em][l]{\thecontentslabel}\hspace{0.22607421875em}}{\hspace{4em}}{\titlerule*[0.25244140625em]{.}\thecontentspage}[\vspace{-\parskip}\addvspace{5bp}]
