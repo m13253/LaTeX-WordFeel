@@ -6,7 +6,7 @@ Please read the [document.pdf](document.pdf) for examples and instructions.
 
 ## Preview
 
-![Preview Page 0](preview/0.svg)
+![Preview Cover Page](preview/0.svg)
 
 ![Preview Page 1](preview/1.svg)
 
