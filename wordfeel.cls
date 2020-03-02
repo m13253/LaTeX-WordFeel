@@ -120,7 +120,7 @@
 \renewcommand{\familydefault}{\sfdefault}
 \wordfeel@resetsize
 
-\renewcommand{\maketitle}{{\par\wordfeel@titlefamily\fontsize{28bp}{34.1796875bp}\selectfont{\@title}\par\vspace{-\parskip}\vspace{4.5654296875bp}\wordfeel@subtitlefamily\fontsize{11bp}{13.427734375bp}\selectfont\color[gray]{0.3515625}{\@author}\\{\@date}\par}}
+\renewcommand{\maketitle}{\begingroup\par\linespread{1}\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}\wordfeel@titlefamily\fontsize{28bp}{34.1796875bp}\selectfont{\@title}\par\vspace{4.5654296875bp}\wordfeel@subtitlefamily\fontsize{11bp}{13.427734375bp}\selectfont\color[gray]{0.3515625}{\@author}\par{\@date}\par\endgroup}
 
 \newlength{\wordfeel@flexboxlen}
 \titleformat{\section}{\vspace{-1.3427734375bp}\vspace{\topskip}\vspace*{-\topskip}\ifdim\parskip>12bp\vspace{-12bp}\else\vspace{-\parskip}\fi\wordfeel@titlefamily\fontsize{16bp}{19.53125bp}\selectfont\color[RGB]{47,84,150}}{\settowidth\wordfeel@flexboxlen{{\thesection}\ }\ifdim\wordfeel@flexboxlen<0.3in\makebox[0.3in][l]{{\thesection}}\else{\thesection}\ \fi}{0pt}{}[\vspace{-\parskip}\vspace{1.3427734375bp}]
