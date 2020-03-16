@@ -84,6 +84,7 @@
 \RequirePackage{amsmath}
 \RequirePackage[no-math]{fontspec}
 \RequirePackage{hyperref}
+\RequirePackage{soul}
 \RequirePackage[pagestyles]{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{unicode-math}
@@ -119,6 +120,7 @@
 \setmathfont{Cambria Math}
 \renewcommand{\familydefault}{\sfdefault}
 \wordfeel@resetsize
+\setul{0.14599609375em}{0.0654296875em}
 
 \renewcommand{\maketitle}{\begingroup\par\linespread{1}\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}\wordfeel@titlefamily\fontsize{28bp}{34.1796875bp}\selectfont{\@title}\par\vspace{4.5654296875bp}\wordfeel@subtitlefamily\fontsize{11bp}{13.427734375bp}\selectfont\color[gray]{0.3515625}{\@author}\par{\@date}\par\endgroup}
 
